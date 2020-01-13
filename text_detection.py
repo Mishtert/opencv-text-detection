@@ -7,6 +7,9 @@ import numpy as np
 import argparse
 import time
 import cv2
+from PIL import Image
+from google.colab.patches import cv2_imshow
+
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
@@ -129,5 +132,6 @@ for (startX, startY, endX, endY) in boxes:
 	cv2.rectangle(orig, (startX, startY), (endX, endY), (0, 255, 0), 2)
 
 # show the output image
-cv2.imshow("Text Detection", orig)
-cv2.waitKey(0)
+#cv2.imshow("Text Detection", orig)
+#cv2.waitKey(0)
+cv2_imshow(orig)
